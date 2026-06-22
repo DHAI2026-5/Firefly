@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
 	subtitle: "在整了别催",
 
 	//站点网址
-	site_url: "https://DHAI202.cuteleaf.cn",
+	site_url: "https://Firefly.cuteleaf.cn",
 
 	// 站点描述
 	description:
