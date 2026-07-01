@@ -18,7 +18,11 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 	// right: 平板端显示右侧边栏
 	tabletSidebar: "left",
 
-	// 使用单侧栏(position为left或right)时，是否在文章详情页显示双侧边栏
+	// 文章详情页隐藏侧边栏，设为 true 则只在首页等非文章页显示
+	hideSidebarOnPostPage: false,
+
+	// 文章详情页保持双侧栏
+	// 使用单侧栏(position为left或right)时，是否在文章详情页显示双侧边栏，（hideSidebarOnPostPage需要保持false）
 	// 当position为left时开启此项，文章详情页将额外显示右侧边栏
 	// 当position为right时开启此项，文章详情页将额外显示左侧边栏
 	// 适用在只想用单侧栏，但在文章详情页想用对侧栏的目录等组件的场景
@@ -31,7 +35,7 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 	// showTitle 是否显示该组件标题，默认true
 	// position 组件位置：top固定顶部，sticky粘性定位(会跟随页面滚动)
 	// showOnPostPage 是否在文章详情页显示该组件
-	// showOnNonPostPage 是否在非文章详情页显示该组件（除文章详情页外都显示）
+	// hideOnNonPostPage 是否在非文章详情页隐藏该组件（true=仅文章详情页显示）
 	// specificConfig 组件专属配置
 	leftComponents: [
 		{
@@ -153,8 +157,8 @@ export const sidebarLayoutConfig: SidebarLayoutConfig = {
 			position: "sticky",
 			// 是否在文章详情页显示
 			showOnPostPage: true,
-			// 是否在非文章详情页显示
-			showOnNonPostPage: false,
+			// 是否在非文章详情页隐藏
+			hideOnNonPostPage: true,
 		},
 		{
 			// 组件类型：广告栏组件 1
