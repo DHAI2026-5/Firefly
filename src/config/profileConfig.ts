@@ -9,7 +9,7 @@ export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.avif",
 
 	// 名字
-	name: "Firefly",
+	name: "和泉小站",
 
 	// 个人签名
 	bio: "Hello, I'm Firefly.",
