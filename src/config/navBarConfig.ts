@@ -90,7 +90,7 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 				icon: "fa7-brands:gitee",
 			},
 			{
-				name: "QQ交流群",
+				name: "和泉QQ",
 				url: "https://qm.qq.com/q/ZGsFa8qX2G",
 				external: true,
 				icon: "fa7-brands:qq",
