@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Firefly 博客编辑器</title>
+		<link rel="stylesheet" href="/app.css" />
+	</head>
+	<body>
+		<header class="topbar">
+			<div>
+				<h1>Firefly 博客编辑器</h1>
+				<div id="git-status" class="muted">正在读取仓库状态…</div>
+				<div id="msg" class="msg" hidden></div>
+			</div>
+			<a id="actions-link" class="ghost-link" target="_blank" rel="noreferrer" hidden>
+				GitHub Actions
+			</a>
+		</header>
+
+		<main class="layout">
+			<aside class="sidebar">
+				<button id="btn-new" class="primary" type="button">＋ 新建文章</button>
+				<label class="field">
+					<span>打开已有文章</span>
+					<input id="post-filter" placeholder="搜标题或文件名" />
+				</label>
+				<div id="post-list" class="post-list"></div>
+			</aside>
+
+			<section class="editor">
+				<label class="field">
+					<span>标题</span>
+					<input id="title" placeholder="这篇文章叫什么" />
+				</label>
+
+				<label class="field">
+					<span>摘要（可选，留空由正文开头自动生成）</span>
+					<input id="description" placeholder="一两句话说明这篇写了什么" />
+				</label>
+
+				<div class="row">
+					<label class="field">
+						<span>日期</span>
+						<input id="date" type="date" />
+					</label>
+					<label class="field grow">
+						<span>文件名（英文 + 短横线）</span>
+						<input id="slug" placeholder="my-first-post" autocomplete="off" />
+					</label>
+				</div>
+				<div id="filename" class="filename"></div>
+
+				<div class="row">
+					<label class="field grow">
+						<span>标签（逗号分隔）</span>
+						<input id="tags" placeholder="博客, 日常" />
+					</label>
+					<label class="field">
+						<span>分类</span>
+						<input id="category" placeholder="日常" />
+					</label>
+					<label class="check">
+						<input id="draft" type="checkbox" checked />
+						<span>草稿</span>
+					</label>
+				</div>
+
+				<div class="panel">
+					<div class="panel-head">
+						<strong>图片</strong>
+						<span class="muted">自动压成 avif，最长边 1600</span>
+					</div>
+					<div id="dropzone" class="dropzone">
+						<input id="file-input" type="file" accept="image/*" multiple hidden />
+						<button id="btn-upload" class="ghost" type="button">
+							选择图片 / 拍照
+						</button>
+						<span class="muted">也可以直接把图拖到这块区域</span>
+					</div>
+					<div id="images" class="images"></div>
+					<div id="cover-hint" class="hint">封面：未设置</div>
+				</div>
+
+				<div class="toolbar">
+					<button type="button" data-insert="grid">插入组图</button>
+					<button type="button" data-insert="tip">提示框</button>
+					<button type="button" data-insert="code">代码块</button>
+					<button type="button" data-insert="bold">粗体</button>
+					<button type="button" data-insert="link">链接</button>
+					<a id="preview-link" class="toolbar-link" target="_blank" rel="noreferrer">
+						本地预览
+					</a>
+				</div>
+				<textarea id="body" spellcheck="false" placeholder="正文用 Markdown 写…"></textarea>
+
+				<div class="actions">
+					<label class="check">
+						<input id="auto-lqip" type="checkbox" checked />
+						<span>保存后更新 LQIP</span>
+					</label>
+					<span class="grow"></span>
+					<button id="btn-save" class="ghost" type="button">保存到磁盘</button>
+					<button id="btn-publish" class="primary" type="button">
+						发布（commit + push）
+					</button>
+				</div>
+				<pre id="output" class="output" hidden></pre>
+			</section>
+		</main>
+
+		<script src="/app.js"></script>
+	</body>
+</html>
