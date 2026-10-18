@@ -1,2 +1,6 @@
 *.js linguist-language=astro
 * text=auto eol=lf
+
+# Windows 批处理必须是 CRLF，否则 cmd 解析可能出错
+*.cmd text eol=crlf
+*.bat text eol=crlf
