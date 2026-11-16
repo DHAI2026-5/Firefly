@@ -38,3 +38,7 @@ Firefly-docs/
 cache/
 package/
 .obsidian/
+
+# 本机运行时产物（DSH 收件箱、AstrBot 数据目录），不要进仓库
+.dsh-inbox/
+data/
